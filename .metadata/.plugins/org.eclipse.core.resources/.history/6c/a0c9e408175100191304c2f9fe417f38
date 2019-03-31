@@ -1,0 +1,19 @@
+package com.movies.resource;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class MovieCatalogResource {
+
+	public List<CatalogItem> getCatalog(String userId) {
+		List<CatalogItem> list = new ArrayList<CatalogItem>();
+		CatalogItem item1 = new CatalogItem("Movie1", "About movie1", 5);
+		list.add(item1);
+		return list;
+	}
+}

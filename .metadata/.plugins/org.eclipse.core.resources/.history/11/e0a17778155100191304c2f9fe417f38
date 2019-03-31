@@ -1,0 +1,10 @@
+package com.movies.resource;
+
+public class CatalogItem {
+	
+	private String name;
+	private String desc;
+	private int rating;
+	
+	
+}

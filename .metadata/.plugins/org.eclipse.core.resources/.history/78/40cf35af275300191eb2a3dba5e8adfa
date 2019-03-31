@@ -1,0 +1,9 @@
+package com.movie.catalog;
+
+import java.util.List;
+
+public class CatalogItem {
+	private String userId;
+	private List<Movie> movie;
+	private List<Rating> rating;
+}

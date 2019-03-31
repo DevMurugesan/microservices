@@ -1,0 +1,5 @@
+package com.movie.app;
+
+public class MovieService {
+
+}

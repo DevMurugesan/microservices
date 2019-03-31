@@ -1,0 +1,5 @@
+package com.movies.resource;
+
+public class CatalogItem {
+
+}

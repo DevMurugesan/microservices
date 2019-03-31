@@ -1,0 +1,29 @@
+package com.movie.catalog;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
+
+@RestController
+@RequestMapping("/moviecat")
+public class MovieCatalogService {
+
+	@Autowired
+	private RestTemplate restTemplate;
+
+	@RequestMapping("/{userId}")
+	public CatalogItem getCatalog(@PathVariable("userId") String userId) {
+		
+		List<Movie> movies = (List<Movie>) restTemplate.getForObject("http://localhost:8081/movie/3", Movie.class);
+		List<Rating> ratings = (List<Rating>) restTemplate.getForObject("http://localhost:8082/rating/7", Rating.class);
+		
+		CatalogItem  cat= new CatalogItem(userId, null, null);
+		cat.setMovie(movies);
+		cat.setRating(ratings);
+		return cat;
+	}
+}

@@ -1,0 +1,9 @@
+package com.movie.rating;
+
+public class Rating {
+	
+	private int ratingId;
+	private String reviewerName;
+	private String comments;
+	private int ratings;
+}
